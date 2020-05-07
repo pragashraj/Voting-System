@@ -4,6 +4,7 @@ import {Route,Switch,BrowserRouter} from 'react-router-dom'
 
 import Home from './pages/Home'
 import Header from './components/header/Header'
+import Footer from './components/footer/Footer'
 
 
 const App=()=> {
@@ -14,6 +15,7 @@ const App=()=> {
           <Switch>
               <Route exact path='/' component={Home}/>
           </Switch>
+          <Footer/>
       </div>
     </BrowserRouter>
   )
