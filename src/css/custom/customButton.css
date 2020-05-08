@@ -1,0 +1,24 @@
+.custom-button-container{
+    width: 100%;
+    height: 100%;
+}
+
+.custom-button{
+    width: 100%;
+    height:100%;
+    background-color: fuchsia;
+    color: white;
+    border-width: 0;
+    border-top-right-radius: 4ch;
+    border-top-left-radius: 4ch;
+    border-bottom-right-radius: 4ch;
+    border-bottom-left-radius: 4ch;
+}
+
+.custom-button-container :hover{
+    cursor: pointer;
+    border-color: aqua;
+    border-width: 0.06ch;
+    background-color: white;
+    color: fuchsia;
+}
