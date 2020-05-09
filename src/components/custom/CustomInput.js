@@ -14,6 +14,7 @@ const CustomInput = ({label}) => {
                         type="text"
                         name="nic"
                         className="custom-input-field"
+                        placeholder="Ex : 9740500v"
                     />
                 </div>
             </div>

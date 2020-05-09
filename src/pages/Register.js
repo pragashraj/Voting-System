@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import '../css/MainPages/register.css'
 import CustomInput from '../components/custom/CustomInput'
 
-
 class Register extends Component {
     render() {
         return (
@@ -16,6 +15,10 @@ class Register extends Component {
                         <form className="register-form">
                             <CustomInput label ="NIC NO "/>
                         </form>
+
+                        <div className="register-submit-container">
+                            <button className="register-submit">submit</button>
+                        </div>
                     </div>
                 </div>
             </div>
