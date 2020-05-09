@@ -1,0 +1,41 @@
+.register{
+    width: 100%;
+    height: 70%;
+}
+
+.titleBlock{
+    width: 50%;
+    height: 25%;
+    margin-left: 5%;
+}
+
+.register-title{
+    font-size: 2.5em;
+}
+
+.register-step{
+    opacity: 0.6;
+    font-size: 1.5em;
+}
+
+.register-input{
+     width: 50%;
+    height: 50%;
+    margin-left: 5%;
+}
+
+.register-form-container{
+    width: 90%;
+    height: 100%;
+}
+
+.register-form{
+    width: 100%;
+    height: 50%;
+    padding-top: 15%;
+}
+
+.register-form-submit{
+    width: 20%;
+    height: 20%;
+}

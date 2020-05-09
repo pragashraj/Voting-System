@@ -1,0 +1,31 @@
+.custom-input{
+    width: 100%;
+    height: 100%;
+}
+
+
+.custom-input-container{
+    width: 100%;
+    height: 100%;
+}
+
+.label-container{
+    width: 20%;
+    float: left;
+}
+
+.input-container{
+    width: 78%;
+    margin-left: 22%;
+    height: 20%;
+}
+
+.custom-input-field{
+    width: 65%;
+    height: 100%;
+    margin-top: 2%;
+}
+
+.custom-label{
+    font-size: 2.2em;
+}
