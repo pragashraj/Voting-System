@@ -5,6 +5,14 @@ import fingerprint from '../assets/fingerprint.jpg'
 
 class Register extends Component {
 
+    handleSubmit=(e)=>{
+        e.preventDefault()
+    }
+
+    handleInput=(e)=>{
+        console.log(e)
+    }
+
     renderStep01=()=>{
         return(
             <div className="step01">
@@ -15,11 +23,11 @@ class Register extends Component {
                 <div className="register-input">
                     <div className="register-form-container">
                         <form className="register-form">
-                            <CustomInput label ="NIC NO "/>
+                            <CustomInput label ="NIC NO " handleInput={this.handleInput}/>
                         </form>
 
                         <div className="register-submit-container">
-                            <button className="register-submit">submit</button>
+                            <button className="register-submit" onClick={this.handleSubmit}>submit</button>
                         </div>
                     </div>
                 </div>
@@ -51,7 +59,7 @@ class Register extends Component {
         return (
             <div className="register">
                 {
-                    this.renderStep02()
+                    this.renderStep01()
                 }
             </div>
         )

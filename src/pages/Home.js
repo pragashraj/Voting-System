@@ -12,6 +12,7 @@ const Home = ({lang,setLanguage,history}) => {
         setLanguage(e)
         history.push('/register')
     }
+    
     return (
         <div className="home">
             <div className="home-container">
