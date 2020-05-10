@@ -2,7 +2,16 @@ import React from 'react'
 import '../css/MainPages/home.css'
 import CustomButton from '../components/custom/CustomButton'
 
-const Home = () => {
+import {connect} from 'react-redux'
+
+import {setLanguage} from '../components/redux/actions/LanguageAction'
+
+const Home = ({lang,setLanguage,history}) => {
+
+    const handleBtnTab=(e)=>{
+        setLanguage(e)
+        history.push('/register')
+    }
     return (
         <div className="home">
             <div className="home-container">
@@ -10,21 +19,32 @@ const Home = () => {
                     <p className="language-selection">Select Your language</p>
 
                      <div className="home-content-btn">
-                        <CustomButton btnTitle="Sinhala"/>
+                        <CustomButton btnTitle="Sinhala" handleBtnTab={handleBtnTab}/>
                      </div>
 
                      <div className="home-content-btn">
-                        <CustomButton btnTitle="Tamil"/>
+                        <CustomButton btnTitle="Tamil" handleBtnTab={handleBtnTab}/>
                     </div>
 
                     <div className="home-content-btn">
-                        <CustomButton btnTitle="English"/>
+                        <CustomButton btnTitle="English" handleBtnTab={handleBtnTab}/>
                     </div>
-
                 </div>
             </div>
         </div>
     )
 }
 
-export default Home
+const mapStateToProps=({language:{lang}})=>{
+    return{
+        lang
+    }
+}
+
+const mapDispatchToProps=dispatch=>{
+    return{
+        setLanguage:lang=>dispatch(setLanguage(lang))
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Home)
