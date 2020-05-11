@@ -1,12 +1,17 @@
-import React from 'react'
+import React ,{useEffect} from 'react'
 import '../css/MainPages/home.css'
 import CustomButton from '../components/custom/CustomButton'
 
 import {connect} from 'react-redux'
 
 import {setLanguage} from '../components/redux/actions/LanguageAction'
+import {setCurrentPageIndex} from '../components/redux/actions/currentPageAction'
 
-const Home = ({lang,setLanguage,history}) => {
+const Home = ({setLanguage,setCurrentPageIndex,history}) => {
+
+    useEffect(()=>{
+        setCurrentPageIndex('0')
+    })
 
     const handleBtnTab=(e)=>{
         setLanguage(e)
@@ -44,7 +49,8 @@ const mapStateToProps=({language:{lang}})=>{
 
 const mapDispatchToProps=dispatch=>{
     return{
-        setLanguage:lang=>dispatch(setLanguage(lang))
+        setLanguage:lang=>dispatch(setLanguage(lang)),
+        setCurrentPageIndex:index=>dispatch(setCurrentPageIndex(index))
     }
 }
 

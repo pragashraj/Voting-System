@@ -1,0 +1,86 @@
+.rules{
+    width: 100%;
+    height: 70%;
+}
+
+.rules-container{
+    width: 98%;
+    height: 100%;
+    margin-left: 1%;
+}
+
+.rules-title-block{
+    width: 40%;
+    height: 20%;
+    margin-left: 30%;
+}
+
+.rules-title{
+    font-size: 3em;
+    opacity: 0.4;
+}
+
+.rules-content-block{
+    height: 70%;
+    width: 100%;
+}
+
+.rules-content-container01{
+    height: 100%;
+    width: 60%;
+    border-top-right-radius: 4ch;
+    border-top-left-radius: 4ch;
+    border-bottom-right-radius: 4ch;
+    border-bottom-left-radius: 4ch;
+    float: left;
+}
+.rules-content-container02{
+    height: 70%;
+    width: 35%;
+    border-top-right-radius: 4ch;
+    border-top-left-radius: 4ch;
+    border-bottom-right-radius: 4ch;
+    border-bottom-left-radius: 4ch;
+}
+
+.rules-content{
+    background-color: aqua;
+    width: 98%;
+    margin-left: 1%;
+    height: 94%;
+    margin-top: 1%;
+}
+
+.next-btn-container{
+    width: 20%;
+    height: 25%;
+    margin-left: 76%;
+}
+
+.next-btn{
+    width: 70%;
+    height: 70%;
+    margin-left: 15%;
+    margin-top: 4%;
+    background-color: aliceblue;
+    border-top-right-radius: 4ch;
+    border-top-left-radius: 4ch;
+    border-bottom-right-radius: 4ch;
+    border-bottom-left-radius: 4ch;
+}
+
+.next-btn-title{
+    font-size: 1.5em;
+    float: left;
+    width: 70%;
+}
+
+.next-btn-container :hover{
+    cursor: pointer;
+}
+
+.next-btn-image{
+    width: 25%;
+    height: 70%;
+    margin-top: 5%;
+}

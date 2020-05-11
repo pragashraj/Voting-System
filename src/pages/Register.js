@@ -3,14 +3,33 @@ import '../css/MainPages/register.css'
 import CustomInput from '../components/custom/CustomInput'
 import fingerprint from '../assets/fingerprint.jpg'
 
+import {connect} from 'react-redux'
+
+import {setCurrentPageIndex} from '../components/redux/actions/currentPageAction'
+
 class Register extends Component {
+    state={
+        nic:''
+    }
+
+    componentDidMount(){
+        this.props.setCurrentPageIndex('1')
+    }
 
     handleSubmit=(e)=>{
         e.preventDefault()
+        const nic=this.state.nic
+        if(nic.length>0){
+            console.log("valid")
+        }else{
+            console.log("not valid")
+        }
     }
 
     handleInput=(e)=>{
-        console.log(e)
+       this.setState({
+           nic:e.target.value
+       })
     }
 
     renderStep01=()=>{
@@ -66,4 +85,17 @@ class Register extends Component {
     }
 }
 
-export default Register
+
+const mapStateToProps=({currPage:{currIndex}})=>{
+    return{
+        currIndex
+    }
+}
+
+const mapDispatchToProps=dispatch=>{
+    return{
+        setCurrentPageIndex:index=>dispatch(setCurrentPageIndex(index))
+    }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Register)

@@ -2,14 +2,9 @@ import React ,{Component} from 'react'
 import '../../css/custom/customInput.css'
 
 class CustomInput extends Component{
-    state={
-        inputValue:''
-    }
-
+    
     handleChange=(e)=>{
-        this.setState({
-            inputValue:e.target.value
-        })
+        this.props.handleInput(e)
     }
 
     render(){
@@ -24,7 +19,6 @@ class CustomInput extends Component{
                         <input 
                             type="text"
                             name="nic"
-                            value={this.state.inputValue}
                             className="custom-input-field"
                             placeholder="Ex : 9740500v"
                             required
