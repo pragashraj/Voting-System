@@ -1,0 +1,60 @@
+.candidate{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(221, 232, 241);
+    display: flex;
+    border: 0.002ch solid aqua;
+}
+
+.candidate-image-container{
+    width: 20%;
+    height: 100%;
+}
+
+.candidate-image{
+    width: 60%;
+    height: 100%;
+    margin-left: 25%;
+}
+
+.candidate-name-container{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.candidate-name{
+    font-size: 1.5em;
+}
+
+.candidate-party-container{
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.candidate-party-image{
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.candidate-party-title{
+    font-size: 1.5em;
+}
+
+.candidate-detail-container{
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.candidate-detail{
+    font-size: 1em;
+}

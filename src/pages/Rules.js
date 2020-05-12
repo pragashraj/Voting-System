@@ -6,7 +6,7 @@ import {setCurrentPageIndex} from '../components/redux/actions/currentPageAction
 
 import next from '../assets/next.png'
 
-const Rules = ({setCurrentPageIndex}) => {
+const Rules = ({setCurrentPageIndex,history}) => {
 
     useEffect(()=>{
         setCurrentPageIndex('2')
@@ -26,7 +26,7 @@ const Rules = ({setCurrentPageIndex}) => {
                         <div className="rules-content"></div>                       
                     </fieldset>
                     <div className="next-btn-container">
-                        <button className="next-btn" onClick={()=>console.log("click")}>
+                        <button className="next-btn" onClick={()=>history.push('/candidateView')}>
                             <p className="next-btn-title"> Next</p>
                             <img src={next} alt ="next-btn" className="next-btn-image"/>
                         </button>
