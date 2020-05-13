@@ -6,10 +6,11 @@ import fingerprint from '../assets/fingerprint.jpg'
 import {connect} from 'react-redux'
 
 import {setCurrentPageIndex} from '../components/redux/actions/currentPageAction'
+import Api from '../api/Api'
 
 class Register extends Component {
     state={
-        nic:''
+        nic:'',
     }
 
     componentDidMount(){
@@ -19,8 +20,15 @@ class Register extends Component {
     handleSubmit=(e)=>{
         e.preventDefault()
         const nic=this.state.nic
+        const  bodyFormData = new FormData();
+        bodyFormData.append("NICnumber", nic); 
+
+        Api.post('/vote/NICValidation',bodyFormData).then(
+            response=>console.log(response)
+        ).catch(err=>console.log(err))
+
         if(nic.length>0){
-            console.log("valid")
+            console.log(nic)
         }else{
             console.log("not valid")
         }
