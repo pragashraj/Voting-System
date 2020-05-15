@@ -1,7 +1,7 @@
 import React from 'react'
 import '../../css/header/header.css'
 
-import srilankaLogo from '../../assets/srilankaLogo.png'
+import srilankaLogo from '../../assets/images/srilankaLogo.png'
 
 const Header = () => {
     return (

@@ -1,10 +1,10 @@
 import React from 'react'
 
 import '../../css/footer/footer.css'
-import current from '../../assets/current.png'
-import nonCurrent from '../../assets/nonCurrent.png'
+import current from '../../assets/images/current.png'
+import nonCurrent from '../../assets/images/nonCurrent.png'
 
-import electionSymbol from '../../assets/electionSymbol.png'
+import electionSymbol from '../../assets/images/electionSymbol.png'
 
 import {connect} from 'react-redux'
 

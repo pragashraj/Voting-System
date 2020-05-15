@@ -27,6 +27,7 @@
      width: 50%;
     height: 50%;
     margin-left: 5%;
+    float: left;
 }
 
 .register-form-container{
@@ -98,4 +99,16 @@
 .fingerprint-message{
     font-size: 2em;
     margin-left: 4%;
+}
+
+
+.validateErrorMessageBlock{
+    margin-left: 55%;
+    width: 20%;
+    margin-top: 7%;
+}
+
+.validateErrorMessage{
+    color: red;
+    font-size: 1.5em;
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 
 import '../../css/custom/candidate.css'
-import candidate from '../../assets/candidate.png'
-import partySymbol from '../../assets/partySymbol.png'
-import arrow from '../../assets/arrow.png'
+import candidate from '../../assets/images/candidate.png'
+import partySymbol from '../../assets/images/partySymbol.png'
+import arrow from '../../assets/images/arrow.png'
 
 const Candidate = () => {
     return (

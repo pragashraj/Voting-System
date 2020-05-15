@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../css/MainPages/register.css'
 import CustomInput from '../components/custom/CustomInput'
-import fingerprint from '../assets/fingerprint.jpg'
+import fingerprint from '../assets/images/fingerprint.jpg'
 
 import {connect} from 'react-redux'
 
@@ -11,6 +11,8 @@ import Api from '../api/Api'
 class Register extends Component {
     state={
         nic:'',
+        userEligiblity:false,
+        errorMessage:false
     }
 
     componentDidMount(){
@@ -19,24 +21,36 @@ class Register extends Component {
 
     handleSubmit=(e)=>{
         e.preventDefault()
-        const nic=this.state.nic
-        const  bodyFormData = new FormData();
-        bodyFormData.append("NICnumber", nic); 
+        const NICnumber=this.state.nic
 
-        Api.post('/vote/NICValidation',bodyFormData).then(
-            response=>console.log(response)
-        ).catch(err=>console.log(err))
+        Api.get("/vote/userByNic/"+NICnumber).then(
+            response=>{
+                let id=response.data.id
+                if(id){
+                    console.log("data is present")
+                    this.setState({
+                        userEligiblity:true,
+                        errorMessage:true
+                    })
+                }else{
+                    this.setState({
+                        errorMessage:true
+                    })
+                }
+            }
+        ).catch(()=>{
+            this.setState({
+                errorMessage:true
+            })
+        })
 
-        if(nic.length>0){
-            console.log(nic)
-        }else{
-            console.log("not valid")
-        }
     }
+
 
     handleInput=(e)=>{
        this.setState({
-           nic:e.target.value
+           nic:e.target.value,
+           errorMessage:false
        })
     }
 
@@ -47,6 +61,7 @@ class Register extends Component {
                     <p className="register-title">Register</p>
                     <p className="register-step">Step 01 : Enter Your NIC</p>
                 </div>
+
                 <div className="register-input">
                     <div className="register-form-container">
                         <form className="register-form">
@@ -57,6 +72,12 @@ class Register extends Component {
                             <button className="register-submit" onClick={this.handleSubmit}>submit</button>
                         </div>
                     </div>
+                </div>
+
+                <div className="validateErrorMessageBlock">
+                    {
+                        this.state.errorMessage ? <p className="validateErrorMessage">......Your NIC Not Valid .......</p> :null
+                    }
                 </div>
             </div>
         )
@@ -86,7 +107,7 @@ class Register extends Component {
         return (
             <div className="register">
                 {
-                    this.renderStep01()
+                    this.state.userEligiblity ? this.renderStep02() : this.renderStep01() 
                 }
             </div>
         )

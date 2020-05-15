@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import '../css/MainPages/rules.css'
 import {setCurrentPageIndex} from '../components/redux/actions/currentPageAction'
 
-import next from '../assets/next.png'
+import next from '../assets/images/next.png'
 
 const Rules = ({setCurrentPageIndex,history}) => {
 
