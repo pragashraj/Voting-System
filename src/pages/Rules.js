@@ -6,7 +6,7 @@ import {setCurrentPageIndex} from '../components/redux/actions/currentPageAction
 
 import next from '../assets/images/next.png'
 
-const Rules = ({setCurrentPageIndex,history}) => {
+const Rules = ({setCurrentPageIndex,history,lang}) => {
 
     useEffect(()=>{
         setCurrentPageIndex('2')
@@ -39,10 +39,17 @@ const Rules = ({setCurrentPageIndex,history}) => {
     )
 }
 
+
+const mapStateToProps=({language:{lang}})=>{
+    return{
+        lang
+    }
+}
+
 const mapDispatchToProps=dispatch=>{
     return{
         setCurrentPageIndex:index=>dispatch(setCurrentPageIndex(index))
     }
 }
 
-export default connect(null,mapDispatchToProps)(Rules)
+export default connect(mapStateToProps,mapDispatchToProps)(Rules)

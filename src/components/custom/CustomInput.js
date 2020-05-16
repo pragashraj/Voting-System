@@ -20,7 +20,7 @@ class CustomInput extends Component{
                             type="text"
                             name="nic"
                             className="custom-input-field"
-                            placeholder="Ex : 9740500v"
+                            placeholder="Ex : 974050090v"
                             required
                             onChange={this.handleChange}
                         />

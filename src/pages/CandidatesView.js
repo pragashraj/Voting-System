@@ -8,7 +8,7 @@ import '../css/MainPages/candidateView.css'
 import Candidate from '../components/custom/Candidate'
 
 
-const CandidatesView = ({setCurrentPageIndex}) => {
+const CandidatesView = ({setCurrentPageIndex,lang}) => {
 
     useEffect(()=>{
         setCurrentPageIndex('3')
@@ -39,6 +39,13 @@ const CandidatesView = ({setCurrentPageIndex}) => {
 
 }
 
+
+const mapStateToProps=({language:{lang}})=>{
+    return{
+        lang
+    }
+}
+
 const mapDispatchToProps=dispatch=>{
     return{
         setCurrentPageIndex:index=>dispatch(setCurrentPageIndex(index))
@@ -46,4 +53,4 @@ const mapDispatchToProps=dispatch=>{
 }
 
 
-export default connect(null,mapDispatchToProps)(CandidatesView)
+export default connect(mapStateToProps,mapDispatchToProps)(CandidatesView)

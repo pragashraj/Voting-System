@@ -5,7 +5,7 @@ import '../css/MainPages/votePanel.css'
 import {connect} from 'react-redux'
 import {setCurrentPageIndex} from '../components/redux/actions/currentPageAction'
 
-const VotePanel = ({setCurrentPageIndex}) => {
+const VotePanel = ({setCurrentPageIndex,lang}) => {
 
     useEffect(()=>{
         setCurrentPageIndex('4')
@@ -22,6 +22,13 @@ const VotePanel = ({setCurrentPageIndex}) => {
     )
 }
 
+
+const mapStateToProps=({language:{lang}})=>{
+    return{
+        lang
+    }
+}
+
 const mapDispatchToProps=dispatch=>{
     return{
         setCurrentPageIndex:index=>dispatch(setCurrentPageIndex(index))
@@ -29,4 +36,4 @@ const mapDispatchToProps=dispatch=>{
 }
 
 
-export default connect(null,mapDispatchToProps)(VotePanel)
+export default connect(mapStateToProps,mapDispatchToProps)(VotePanel)
